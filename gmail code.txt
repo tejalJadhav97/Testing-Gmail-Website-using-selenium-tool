@@ -1,0 +1,40 @@
+package SeleniumAmazon;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+
+public class AmazonTest 
+{
+	WebDriver driver;
+	public void launchBrowser() throws InterruptedException 
+	{
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Administrator.DESKTOP-R4FAM4Q\\Downloads\\chromedriver_win32 (3)\\chromedriver.exe");
+	driver = new ChromeDriver();
+	 driver.get("https://www.amazon.in/");
+	 driver.manage().window().maximize();
+	 driver.findElement(By.id("twotabsearchtextbox")).sendKeys("earphones");
+	 driver.findElement(By.id("a-popover-root")).sendKeys("mobile");
+	 Thread.sleep(2000);
+	 driver.findElement(By.className("nav-input")).submit();
+ 	Thread.sleep(5000);
+ 	
+ 	
+ 	//driver.close();
+	}
+	
+	
+	public static void main(String[] args) throws InterruptedException
+	{
+		// TODO Auto-generated method stub
+		
+		AmazonTest obj = new AmazonTest();
+	      obj.launchBrowser();
+	      
+
+	}
+
+}
